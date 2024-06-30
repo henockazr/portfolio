@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#title-profile, #title-projects, #title-experiences {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#profile, #experiences, #projects, #link-navbar, #title-navbar {
+  font-family: "Poppins", sans-serif;
+}
+
+#grainy-background {
+  background: url('src/assets/svg/grain.webp');
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background-size: cover;
+  opacity: 0.2;
+}
