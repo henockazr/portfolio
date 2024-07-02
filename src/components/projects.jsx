@@ -1,27 +1,88 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Modal } from "flowbite-react";
-import { useState } from "react";
-import sman19 from '../assets/img/data/sman19.png';
-import toolist from '../assets/img/data/toolist.png';
-import royalcars from '../assets/img/data/royalcars.png';
-import berita from '../assets/img/data/berita.png';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Backdrop, Box, Modal as MModal, Typography, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { useSpring, animated } from '@react-spring/web';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import jobs from './data/projectsData';
 
-const jobs = [
-    { title: 'Presensi SMAN 19 Bandung', image: sman19, category: ['Laravel', 'Web Development'], subtitle: 'Record attendance utilizing QR Code by using Laravel.', description:'' },
-    { title: 'TooList', image: toolist, category: ['Flutter', 'Mobile Development'], subtitle: 'Notes app to write your task, also track your expense.', description:'' },
-    { title: 'Royal Cars', image: royalcars, category: ['PHP', 'Web Development'], subtitle: 'Providing service for online car rent booking.', description:'' },
-    { title: 'Berita.com', image: berita, category: ['Web Development'], subtitle: 'Basic web development showing top rated news anchor.', description:'' },
-]
+const Fade = React.forwardRef(function Fade(props, ref) {
+    const {
+        children,
+        in: open,
+        onEnter,
+        onExited,
+        ...other
+    } = props;
+    const style = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: open ? 1 : 0 },
+        onStart: () => {
+            if (open && onEnter) {
+                onEnter(null, true);
+            }
+        },
+        onRest: () => {
+            if (!open && onExited) {
+                onExited(null, true);
+            }
+        },
+    });
+
+    return (
+        <animated.div ref={ref} style={style} {...other}>
+            {children}
+        </animated.div>
+    );
+});
+
+Fade.propTypes = {
+    children: PropTypes.element.isRequired,
+    in: PropTypes.bool,
+    onEnter: PropTypes.func,
+    onExited: PropTypes.func,
+};
+
+const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90%',
+    maxWidth: '800px',
+    maxHeight: '90vh',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+    overflowY: 'auto'
+};
+
+const modalImageStyle = {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    marginBottom: '20px'
+};
+
+const modalContentStyle = {
+    textAlign: 'left',
+    padding: '10px'
+};
 
 export default function Projects() {
-    const [openModal, setOpenModal] = useState(false);
-    const [modalContent, setModalContent] = useState({ title: '', subtitle: '', category: [] });
+    const [open, setOpen] = useState(false);
+    const [modalContent, setModalContent] = useState({ title: '', link: { github: '', visit: '' }, subtitle: '', category: [], tech: [], description: '', image: '' });
 
     const handleOpenModal = (job) => {
         setModalContent(job);
-        setOpenModal(true);
+        setOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpen(false);
     };
 
     const containerVariants = {
@@ -44,21 +105,21 @@ export default function Projects() {
 
     const { ref, inView } = useInView({
         triggerOnce: false,
-        threshold: 0.3,
+        threshold: 0.5,
     });
 
     return (
         <div className='container mx-5 mb-12'>
             <div className="lg:flex justify-center">
-                <motion.div 
+                <motion.div
                     className='text-center lg:text-left w-auto lg:w-4/12 mt-2 lg:mt-0'
                     ref={ref}
                     variants={containerVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
                 >
-                    <motion.p 
-                        id="title-projects" 
+                    <motion.p
+                        id="title-projects"
                         className="text-neutral-100 text-5xl mb-8 lg:mb-10 font-light"
                         variants={titleVariants}
                     >
@@ -88,7 +149,7 @@ export default function Projects() {
                                 whileHover="hover"
                             >
                                 <img
-                                    src={job.image}
+                                    src={job.image.thumbnail}
                                     alt="Card Thumbnail"
                                     className="styled-card-thumbnail"
                                 />
@@ -108,19 +169,65 @@ export default function Projects() {
                     })}
                 </div>
             </div>
-            <Modal show={openModal} onClose={() => setOpenModal(false)} size='7xl'>
-                <Modal.Header>{modalContent.title}</Modal.Header>
-                <Modal.Body>
-                    <div className="space-y-6">
-                        <p className="text-base leading-relaxed">{modalContent.description}</p>
-                        <div className="flex items-center gap-2">
-                            {modalContent.category.map((cat, index) => (
-                                <span key={index} className="bg-neutral-600 py-1 px-3 rounded-3xl text-neutral-100">{cat}</span>
-                            ))}
+            <MModal
+                aria-labelledby="spring-modal-title"
+                aria-describedby="spring-modal-description"
+                open={open}
+                onClose={handleCloseModal}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    TransitionComponent: Fade,
+                }}
+            >
+                <Fade in={open}>
+                    <Box sx={modalStyle}>
+                        <IconButton
+                            aria-label="close"
+                            onClick={handleCloseModal}
+                            sx={{
+                                position: 'absolute',
+                                right: 8,
+                                top: 8,
+                                color: (theme) => theme.palette.grey[500],
+                            }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <img className='border-2 border-stone-500' src={modalContent.image.header} alt={modalContent.title} style={modalImageStyle} />
+                        <div className='lg:flex'>
+                            <div style={modalContentStyle} className='w-5/6'>
+                                <Typography id="spring-modal-title" variant="h6" component="h2">
+                                    {modalContent.title}
+                                </Typography>
+                                <Typography id="spring-modal-description" sx={{ mt: 2 }}>
+                                    {modalContent.description}
+                                </Typography>
+                            </div>
+                            <div id='tech-stack' style={modalContentStyle} className='w-1/6'>
+                                <p className='text-lg my-2'>Tech Stack</p>
+                                {modalContent.tech.map((cat, index) => (
+                                    <p key={index} className="rounded-3xl text-stone-600">{cat}</p>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
+                        {modalContent.link ?
+                            <div className='flex gap-2 px-2 py-3'>
+                                {modalContent.link.github ? 
+                                <a className='rounded-3xl bg-stone-500 text-stone-100 px-4 py-2 text transition duration-500 lg:hover:scale-105' href={modalContent.link.github} target='_blank'>GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right inline-block" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                                </svg></a>
+                                : ''}
+                                {modalContent.link.visit ? 
+                                <a className='rounded-3xl bg-stone-500 text-stone-100 px-4 py-2 text transition duration-500 lg:hover:scale-105' href={modalContent.link.visit} target='_blank'>Visit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right inline-block" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                                </svg></a>
+                                : ''}
+                            </div>
+                            : ''}
+                    </Box>
+                </Fade>
+            </MModal>
         </div>
     )
 }

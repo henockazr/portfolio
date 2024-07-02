@@ -26,7 +26,7 @@ export default function profile() {
                     </div>
                 </div>
                 <div className='text-left w-auto lg:w-2/5 mt-10 lg:mt-2'>
-                    <p id='title-profile' className="text-center lg:text-left text-neutral-100 text-5xl mb-8">Azriel Henock, <br />Front-End &amp; Back-End Developer from <br />Bogor, Indonesia.</p>
+                    <p id='title-profile' className="text-center lg:text-left text-neutral-100 text-5xl mb-8">Azriel Henock, <br />Front-end &amp; Back-end Developer from <br />Bogor, Indonesia.</p>
                     <p className="text-neutral-300 text-2xl mb-1 italic">About Azriel</p>
                     <p className='text-justify lg:text-left text-neutral-400 text-xl mb-6 text-balance'>
                         Azriel Henock is a passionate web developer with a keen eye for detail and a love for crafting beautiful, functional, and user-friendly digital experiences.

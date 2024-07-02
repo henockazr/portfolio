@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-#title-profile, #title-projects, #title-experiences {
+#title-profile, #title-projects, #title-experiences, #spring-modal-title {
   font-family: 'Montserrat', sans-serif;
 }
 
-#profile, #experiences, #projects, #link-navbar, #title-navbar {
+#spring-modal-title {
+  font-weight: 600;
+}
+
+#profile, #experiences, #projects, #link-navbar, #title-navbar, #spring-modal-description, #tech-stack {
   font-family: "Poppins", sans-serif;
 }
 
