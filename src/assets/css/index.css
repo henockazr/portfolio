@@ -10,8 +10,12 @@
   font-weight: 600;
 }
 
-#profile, #experiences, #projects, #link-navbar, #title-navbar, #spring-modal-description, #tech-stack {
+#profile, #experiences, #projects, #link-navbar, #title-navbar, #spring-modal-description {
   font-family: "Poppins", sans-serif;
+}
+
+#link, #tech-stack {
+  font-family: "Inter", sans-serif;
 }
 
 #grainy-background {

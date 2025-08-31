@@ -53,7 +53,8 @@ const modalStyle = {
     width: '90%',
     maxWidth: '800px',
     maxHeight: '90vh',
-    bgcolor: 'background.paper',
+    bgcolor: '#0E1111', // Changed to black
+    color: '#fff', // Text color changed to white for better contrast
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
@@ -126,7 +127,7 @@ export default function Projects() {
                         Projects
                     </motion.p>
                 </motion.div>
-                <div className='text-left w-auto lg:w-2/5 mt-2'></div>
+                <div className='text-left w-auto lg:w-2/5 mt=2'></div>
             </div>
             <div id="projects" className="lg:flex justify-center">
                 <div className="lg:gap-5 lg:grid grid-cols-3 grid-flow-row">
@@ -207,7 +208,7 @@ export default function Projects() {
                             <div id='tech-stack' style={modalContentStyle} className='w-1/6'>
                                 <p className='text-lg my-2'>Tech Stack</p>
                                 {modalContent.tech.map((cat, index) => (
-                                    <p key={index} className="rounded-3xl text-stone-600">{cat}</p>
+                                    <p key={index} className="rounded-3xl text-stone-300">{cat}</p>
                                 ))}
                             </div>
                         </div>
