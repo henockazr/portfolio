@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import photo from '../assets/img/profile.jpg';
-import file from '../assets/file/azriel-henock-resume.pdf';
+import file from '../assets/file/azriel-resume.pdf';
 
 export default function profile() {
     return (
