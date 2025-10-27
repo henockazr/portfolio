@@ -17,7 +17,7 @@ const jobs = [
         image: { thumbnail: warehouse, header: headerwarehouse },
         tech: ['Next.js', 'PostgreSQL', 'Drizzle ORM'],
         category: ['Website', 'Backend'],
-        link: { visit: 'https://warehouse.digitalkultr.com/' },
+        link: { visit: 'https://dutra.digitalkultr.com/' },
         subtitle: 'Inventory management system for Dutra Parahyangan.',
         description: 'During my internship at PT Digitalkultr, I worked as a Backend Developer Intern under the guidance of Project Manager. In the "Dutra Parahyangan Warehouse Project," I developed an inventory management system using Next.js and PostgreSQL with Drizzle ORM. This project aimed to streamline warehouse operations and improve inventory tracking for Dutra Parahyangan.'
     },
@@ -37,10 +37,8 @@ const jobs = [
         image: { thumbnail: football, header: headerfootball },
         tech: ['Laravel', 'MySQL', 'Bootstrap'],
         category: ['Website', 'Fullstack'],
-        link: {
-            github: 'https://github.com/revou-fundamental-course/26-jun-23-henockazr'
-        },
-        subtitle: 'Basic web development showing top rated news anchor.',
+        link: {},
+        subtitle: 'Record and display football league information.',
         description: 'This is one of the self-initiated project. It came from the idea of how to track matches in a small FIFA tournament in my department at ITENAS, and also affected by my interest in football and web development. In the "Information System League Project," I developed a web application to manage and display football league information using Laravel. The project focused on providing users with up-to-date league standings, match schedules, and team statistics.'
     },
     {

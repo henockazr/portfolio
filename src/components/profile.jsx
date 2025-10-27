@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import photo from '../assets/img/profile.jpg';
-import file from '../assets/file/azriel-resume.pdf';
+import file from '../assets/file/cv-azriel-henock.pdf';
 
 export default function profile() {
     return (
@@ -26,16 +26,17 @@ export default function profile() {
                     </div>
                 </div>
                 <div className='text-left w-auto lg:w-2/5 mt-10 lg:mt-2'>
-                    <p id='title-profile' className="text-center lg:text-left text-neutral-100 text-5xl mb-8">Azriel Henock, <br />Front-end &amp; Back-end Developer from <br />Bogor, Indonesia.</p>
+                    <p id='title-profile' className="text-center lg:text-left text-neutral-100 text-5xl mb-8">Azriel Henock, <br />Frontend &amp; Backend Developer from <br />Bogor, Indonesia.</p>
                     <p className="text-neutral-300 text-2xl mb-1 italic">About Azriel</p>
-                    <p className='text-justify lg:text-left text-neutral-400 text-xl mb-6 text-balance'>
+                    <p className='text-justify text-neutral-400 text-xl mb-6 text-balance'>
                         Azriel Henock is a passionate web developer with a keen eye for detail and a love for crafting beautiful, functional, and user-friendly digital experiences.
                         He has had the privilege of working on diverse projects that have honed his skills and expanded his creative horizons.
                     </p>
                     <p className=" text-neutral-300 text-2xl mb-1 italic">His Journey</p>
-                    <p className='text-justify lg:text-left text-neutral-400 text-xl mb-6 text-balance'>
-                        Azriel Henock's journey in web development began at the age of 20. Over the years, he developed a deep understanding of <u>HTML</u>, <u>CSS</u>, <u>JavaScript</u>, <u>Laravel</u>, <u>Flutter</u>, and most recently, <u>React</u>, which he used to build this website within <u>Vite</u>.
-                        He thrives on solving complex problems and bringing innovative ideas to life, always looking forward to expanding his knowledge in ways that will benefit all of his skills and experiences.
+                    <p className='text-justify text-neutral-400 text-xl mb-6 text-balance'>
+                        Azriel Henock's journey in development began at the age of 20. He has built a strong foundation in <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>, and has mastered server-side languages such as <b>PHP</b> and <b>Python</b>.
+                        He specializes in building modern applications using frameworks such as <b>Laravel</b>, <b>Next.js</b>, and <b>Flutter</b>.
+                        His database expertise includes <b>Microsoft SQL Server</b>, <b>MySQL</b>, and <b>PostgreSQL</b>.
                     </p>
                 </div>
             </div>
