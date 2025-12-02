@@ -11,7 +11,7 @@ import headerfootball from '../../assets/img/data/header_football.png';
 import warehouse from '../../assets/img/data/warehouse.png';
 import headerwarehouse from '../../assets/img/data/header_warehouse.png';
 
-const jobs = [
+const projects = [
     {
         title: 'Dutra Parahyangan Warehouse',
         image: { thumbnail: warehouse, header: headerwarehouse },
@@ -19,13 +19,13 @@ const jobs = [
         category: ['Website', 'Backend'],
         link: { visit: 'https://dutra.digitalkultr.com/' },
         subtitle: 'Inventory management system for Dutra Parahyangan.',
-        description: 'During my internship at PT Digitalkultr, I worked as a Backend Developer Intern under the guidance of Project Manager. In the "Dutra Parahyangan Warehouse Project," I developed an inventory management system using Next.js and PostgreSQL with Drizzle ORM. This project aimed to streamline warehouse operations and improve inventory tracking for Dutra Parahyangan.'
+        description: 'During my internship at PT Digitalkultr, I worked as a Backend Developer Intern under the guidance of Project Manager. In the "Dutra Parahyangan Warehouse Project", I developed an inventory management system using Next.js and PostgreSQL with Drizzle ORM. This project aimed to streamline warehouse operations and improve inventory tracking for Dutra Parahyangan.'
     },
     {
         title: 'Presensi SMAN 19 Bandung',
         image: { thumbnail: sman19, header: headersman19 },
         tech: ['Laravel', 'MySQL', 'Bootstrap'],
-        category: ['Website', 'Backend'],
+        category: ['Website', 'Fullstack'],
         link: {
             visit: 'https://presensi.smanegeri19bdg.sch.id/'
         },
@@ -75,4 +75,4 @@ const jobs = [
     },
 ];
 
-export default jobs;
+export default projects;

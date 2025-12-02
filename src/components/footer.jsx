@@ -18,8 +18,8 @@ export default function footer() {
                 </div>
             </div>
             <div className="h-20 mb-2 lg:mb-0 text-center lg:flex justify-between items-center px-10 lg:px-36">
-                <p className="text-stone-400 text-xl font-sans">{now.slice(0, 2)}<p className="animate-pulse inline text-2xl">:</p>{now.slice(3,5)}. {now.slice(5)}.</p>
-                <p className="text-stone-400 text-xl">&copy; Azriel Henock 2024</p>
+                <p className="text-stone-400 text-xl font-sans">{now.slice(0, 2)}<p className="animate-pulse inline text-2xl">:</p>{now.slice(3,5)}. {now.slice(5,9) + ", " + now.slice(15,22)}.</p>
+                <p className="text-stone-400 text-xl">&copy; Azriel Henock {now.slice(28)}</p>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useSpring, animated } from '@react-spring/web';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import jobs from './data/projectsData';
+import projects from './data/projectsData';
 
 const Fade = React.forwardRef(function Fade(props, ref) {
     const {
@@ -110,7 +110,7 @@ export default function Projects() {
     });
 
     return (
-        <div className='container mx-5 mb-12'>
+        <div id='projects' className='container mx-5 mb-12'>
             <div className="lg:flex justify-center">
                 <motion.div
                     className='text-center lg:text-left w-auto lg:w-4/12 mt-2 lg:mt-0'
@@ -129,9 +129,9 @@ export default function Projects() {
                 </motion.div>
                 <div className='text-left w-auto lg:w-2/5 mt=2'></div>
             </div>
-            <div id="projects" className="lg:flex justify-center">
+            <div className="lg:flex justify-center">
                 <div className="lg:gap-5 lg:grid grid-cols-3 grid-flow-row">
-                    {jobs.map((job, index) => {
+                    {projects.map((job, index) => {
                         const { ref, inView } = useInView({
                             triggerOnce: false,
                             threshold: 0.1,

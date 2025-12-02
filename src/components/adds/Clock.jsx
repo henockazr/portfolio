@@ -6,7 +6,7 @@ const Clock = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            const currentTime = moment().tz('Asia/Jakarta').format('HH:mm dddd, Do MMMM');
+            const currentTime = moment().tz('Asia/Jakarta').format('HH:mm dddd, Do MMMM YYYY');
             setBandungTime(currentTime);
         }, 1000);
 

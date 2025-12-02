@@ -2,7 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Home', id: '#', current: true },
+    { name: 'Home', id: '#', current: false },
     { name: 'Projects', id: '#', current: false },
     { name: 'Experiences', id: '#', current: false },
 ]
