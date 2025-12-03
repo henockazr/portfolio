@@ -1,19 +1,36 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment-timezone';
 
-const Clock = () => {
-    const [bandungTime, setBandungTime] = useState('');
+// eslint-disable-next-line react-refresh/only-export-components
+const Day = () => {
+    const [day, setDay] = useState('');
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            const currentTime = moment().tz('Asia/Jakarta').format('HH:mm dddd, Do MMMM YYYY');
-            setBandungTime(currentTime);
+        const intervalDayId = setInterval(() => {
+            const currentDay = moment().tz('Asia/Jakarta').format('HH:mm dddd');
+            setDay(currentDay);
         }, 1000);
 
-        return () => clearInterval(intervalId);
+        return () => clearInterval(intervalDayId);
     }, []);
 
-    return bandungTime;
+    return day;
 };
 
-export default Clock;
+// eslint-disable-next-line react-refresh/only-export-components
+const Date = () => {
+    const [date, setDate] = useState('');
+
+    useEffect(() => {
+        const intervalDateId = setInterval(() => {
+            const currentDate = moment().tz('Asia/Jakarta').format('Do MMMM YYYY');
+            setDate(currentDate);
+        }, 1000);
+
+        return () => clearInterval(intervalDateId);
+    }, []);
+
+    return date;
+};
+
+export {Day, Date};
