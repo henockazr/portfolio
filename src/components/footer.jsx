@@ -1,8 +1,10 @@
-import { Day, Date } from "./adds/Clock"
+import { Time, Date, Month, Year } from "./adds/Clock"
 
 export default function footer() {
-    const day = Day();
+    const time = Time();
     const date = Date();
+    const month = Month();
+    const year = Year();
     return (
         <div id='footer' className="lg:mx-20">
             <div className="flex justify-center lg:mb-2">
@@ -19,8 +21,8 @@ export default function footer() {
                 </div>
             </div>
             <div className="h-20 mb-2 lg:mb-0 text-center lg:flex justify-between items-center px-10 lg:px-36">
-                <p className="text-stone-400 text-xl font-sans">{day.slice(0, 2)}<p className="animate-pulse inline text-2xl">:</p>{day.slice(3,5)}. {day.slice(5,9) + ", " + date.slice(0,7)}.</p>
-                <p className="text-stone-400 text-xl">&copy; Azriel Henock {date.slice(-4)}</p>
+                <p className="text-stone-400 text-xl font-sans">{time.slice(0, 2)}<p className="animate-pulse inline text-2xl">:</p>{time.slice(3,5)}. {time.slice(5,9) + ", " + date + " " + month.slice(0,3)}.</p>
+                <p className="text-stone-400 text-xl">&copy; Azriel Henock {year}</p>
             </div>
         </div>
     )

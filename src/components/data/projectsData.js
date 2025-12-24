@@ -10,8 +10,19 @@ import football from '../../assets/img/data/football.png';
 import headerfootball from '../../assets/img/data/header_football.png';
 import warehouse from '../../assets/img/data/warehouse.png';
 import headerwarehouse from '../../assets/img/data/header_warehouse.png';
+import fifa from '../../assets/img/data/fifa.png';
+import header_fifa from '../../assets/img/data/header_fifa.png';
 
 const projects = [
+    {
+        title: 'FIFA Player Prediction',
+        image: {thumbnail: fifa, header: header_fifa},
+        tech: ['Python', 'NumPy', 'Pandas', 'Scikit-Learn'],
+        category: ['Machine Learning', 'Regression'],
+        link: {},
+        subtitle: "AI-Driven Football Player Valuation",
+        description: "An in-depth research project analyzing the correlation between in-game player attributes (FIFA 2012-2025) and their real-world market values. I utilized Python to construct comparative prediction models using XGBoost, SVR, and Random Forest algorithms. The primary challenge involved unifying two disparate data sources. To solve this, I implemented Fuzzy Matching techniques to align the game dataset with real-world pricing data from Transfermarkt, ensuring precise data interpretation. The model's performance was rigorously validated using MAE, RMSE, and R-squared metrics to minimize prediction bias.",
+    },
     {
         title: 'Dutra Parahyangan Warehouse',
         image: { thumbnail: warehouse, header: headerwarehouse },
