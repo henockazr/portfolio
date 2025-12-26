@@ -2,7 +2,7 @@ const jobs = [
     {
         title: 'Backend Developer Intern',
         instance: "Digitalkultr",
-        duration: 'June - August 2025',
+        duration: 'February - July 2025',
         description: 'Developed backend features and APIs for web applications, collaborated with front-end developers to integrate user-facing elements with server-side logic, and optimized application performance and scalability.'
     },
     { 
